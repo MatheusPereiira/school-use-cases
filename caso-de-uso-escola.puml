@@ -1,0 +1,26 @@
+@startuml
+left to right direction
+
+actor Aluno
+actor Professor
+actor Secretaria
+
+rectangle SistemaEscolar {
+  usecase "Consultar notas" as UC1
+  usecase "Ver boletim" as UC2
+  usecase "Lançar notas" as UC3
+  usecase "Cadastrar aluno" as UC4
+  usecase "Autenticar usuário" as UC5
+}
+
+Aluno --> UC1
+Aluno --> UC2
+Professor --> UC3
+Secretaria --> UC4
+
+UC1 ..> UC5 : <<include>>
+UC2 ..> UC5 : <<include>>
+UC3 ..> UC5 : <<include>>
+UC4 ..> UC5 : <<include>>
+
+@enduml
